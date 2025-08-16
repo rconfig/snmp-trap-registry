@@ -108,43 +108,75 @@ Current version: `v1.0.0`
 
 ## 🚀 Usage in rConfig
 
-### Downloading the Registry
+### Recommended: In-App Import (Easiest Method)
 
-**Option 1: Automatic Download (Recommended)**
+The best way to use this registry is through rConfig's built-in import feature:
+
+1. **Navigate to SNMP Trap Filters** page in your rConfig V8+ installation
+2. **Click the "Import Registry" button** to download the latest trap definitions
+3. **Create a new filter** and you'll see enhanced autocomplete with pre-defined traps
+4. **Select from available options** - trap details will auto-populate (name, description, severity, category)
+
+### Offline/Manual Installation
+
+If your rConfig server doesn't have internet access:
+
+1. **Download JSON files** from this repository to your local machine
+2. **Upload to server** and place files in: `storage/app/rconfig/snmp_traps/`
+3. **Clear cache** (if needed): `php artisan snmp:registry clear`
+4. **Refresh the SNMP Trap Filters page** to see the new options
+
+### Command Line Options
+
+**Check Registry Status:**
 ```bash
-# From rConfig console
-php artisan snmp:registry download
-
-# Check status
 php artisan snmp:registry status
+```
 
-# Force update
+**Download Latest Registry:**
+```bash
+php artisan snmp:registry download
+```
+
+**Force Update (Overwrite Recent Files):**
+```bash
 php artisan snmp:registry download --force
 ```
 
-**Option 2: Manual Download**
-1. Download JSON files from this repository
-2. Place them in `storage/app/rconfig/snmp_traps/` directory
-3. Clear cache: `php artisan snmp:registry clear`
+### Enhanced Trap Filtering Experience
 
-### Using Trap Filters
+Once the registry is imported, creating SNMP trap filters becomes much easier:
 
-Once downloaded, the registry enhances your rConfig SNMP trap filtering:
+1. **Smart Autocomplete**: Start typing a trap name or OID to see matching suggestions
+2. **Auto-populated Fields**: Select a trap and rConfig automatically fills in:
+   - Trap name and description
+   - Severity level (info/warning/error/critical)
+   - Category (configuration/interface/system/etc.)
+   - Associated MIB information
+3. **Vendor Filtering**: Filter available traps by vendor (Cisco, Juniper, Fortinet, etc.)
+4. **Quick Setup**: Get monitoring for common events in seconds rather than hours
 
-1. **Enhanced Autocomplete**: When creating trap filters, start typing to see suggestions
-2. **Pre-filled Information**: Select a trap to auto-populate description, severity, and category
-3. **Vendor Filtering**: Filter available traps by vendor in the UI
-4. **Quick Setup**: Common traps like "Cisco Config Change" are ready to use
+### Common Filter Examples
 
-### Example Common Filters
+After importing the registry, you can quickly create filters for:
 
-After downloading the registry, you can quickly create filters for:
+- **Configuration Monitoring**: 
+  - Cisco Config Change (`1.3.6.1.4.1.9.9.43.2.0.1`)
+  - Juniper Config Change (`1.3.6.1.4.1.2636.4.6.0.1`)
+  - Fortinet Config Change (`1.3.6.1.4.1.12356.101.6.0.701`)
 
-- **Cisco Configuration Changes**: `1.3.6.1.4.1.9.9.43.2.0.1`
-- **Interface Link Down**: `1.3.6.1.6.3.1.1.5.3`
-- **Interface Link Up**: `1.3.6.1.6.3.1.1.5.4`
-- **System Cold Start**: `1.3.6.1.6.3.1.1.5.1`
-- **Authentication Failure**: `1.3.6.1.6.3.1.1.5.5`
+- **Interface Monitoring**:
+  - Standard Link Down (`1.3.6.1.6.3.1.1.5.3`)
+  - Standard Link Up (`1.3.6.1.6.3.1.1.5.4`)
+
+- **System Health**:
+  - System Cold Start (`1.3.6.1.6.3.1.1.5.1`)
+  - Cisco CPU High (`1.3.6.1.4.1.9.9.109.2.0.1`)
+  - Fortinet HA Failover (`1.3.6.1.4.1.12356.101.6.0.303`)
+
+- **Security Events**:
+  - Authentication Failure (`1.3.6.1.6.3.1.1.5.5`)
+  - Fortinet IPS Alert (`1.3.6.1.4.1.12356.101.6.0.101`)
 
 ### Raw File Access
 
