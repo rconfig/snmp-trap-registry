@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "updated": "2025-01-15T10:00:00Z",
+    "description": "Fortinet SNMP trap definitions",
+    "enterprise_oid": "1.3.6.1.4.1.12356"
+  },
+  "traps": {
+    "security": {
+      "1.3.6.1.4.1.12356.101.6.0.101": {
+        "name": "IPS Signature Triggered",
+        "category": "security",
+        "severity": "warning",
+        "description": "An intrusion prevention signature has been triggered",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgIpsSigMsg"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.102": {
+        "name": "Virus Detected",
+        "category": "security",
+        "severity": "error",
+        "description": "Antivirus engine has detected malicious content",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgAvVirusMsg"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.103": {
+        "name": "Attack Blocked",
+        "category": "security",
+        "severity": "warning",
+        "description": "A network attack has been detected and blocked",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgIpsAttackMsg"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.201": {
+        "name": "VPN Tunnel Up",
+        "category": "security",
+        "severity": "info",
+        "description": "A VPN tunnel has been established",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgVpnTrapLocalGateway", "fgVpnTrapRemoteGateway"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.202": {
+        "name": "VPN Tunnel Down",
+        "category": "security",
+        "severity": "warning",
+        "description": "A VPN tunnel has been disconnected",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgVpnTrapLocalGateway", "fgVpnTrapRemoteGateway"]
+      }
+    },
+    "system": {
+      "1.3.6.1.4.1.12356.101.6.0.301": {
+        "name": "HA Member Down",
+        "category": "system",
+        "severity": "critical",
+        "description": "A high availability cluster member has gone down",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgHaSystemMode", "fgHaTrapMemberSerial"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.302": {
+        "name": "HA Member Up",
+        "category": "system",
+        "severity": "info",
+        "description": "A high availability cluster member has come up",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgHaSystemMode", "fgHaTrapMemberSerial"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.303": {
+        "name": "HA Switch Over",
+        "category": "system",
+        "severity": "warning",
+        "description": "High availability failover has occurred",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgHaSystemMode", "fgHaTrapMemberSerial"]
+      }
+    },
+    "environmental": {
+      "1.3.6.1.4.1.12356.101.6.0.401": {
+        "name": "CPU High",
+        "category": "performance",
+        "severity": "warning",
+        "description": "CPU utilization has exceeded threshold",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgSysCpuUsage"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.402": {
+        "name": "Memory Low",
+        "category": "performance",
+        "severity": "warning",
+        "description": "Available memory has dropped below threshold",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgSysMemUsage"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.403": {
+        "name": "Disk Low",
+        "category": "performance",
+        "severity": "warning",
+        "description": "Available disk space has dropped below threshold",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgSysDiskUsage"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.501": {
+        "name": "Temperature High",
+        "category": "environmental",
+        "severity": "warning",
+        "description": "Device temperature has exceeded warning threshold",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgHwSensorName", "fgHwSensorValue"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.502": {
+        "name": "Fan Failure",
+        "category": "environmental",
+        "severity": "critical",
+        "description": "A cooling fan has failed",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgHwSensorName", "fgHwSensorAlarmStatus"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.503": {
+        "name": "Power Supply Failure",
+        "category": "environmental",
+        "severity": "critical",
+        "description": "A power supply unit has failed",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgHwSensorName", "fgHwSensorAlarmStatus"]
+      }
+    },
+    "interface": {
+      "1.3.6.1.4.1.12356.101.6.0.601": {
+        "name": "Interface Link Down",
+        "category": "interface",
+        "severity": "warning",
+        "description": "A network interface link has gone down",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "ifName", "ifIndex"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.602": {
+        "name": "Interface Link Up",
+        "category": "interface",
+        "severity": "info",
+        "description": "A network interface link has come up",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "ifName", "ifIndex"]
+      }
+    },
+    "configuration": {
+      "1.3.6.1.4.1.12356.101.6.0.701": {
+        "name": "Config Change",
+        "category": "configuration",
+        "severity": "warning",
+        "description": "Device configuration has been modified",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgConfChangeAdmin", "fgConfChangeTime"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.702": {
+        "name": "Admin Login",
+        "category": "security",
+        "severity": "info",
+        "description": "Administrator has logged into the device",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgAdminLoginUser", "fgAdminLoginSrcIp"]
+      },
+      "1.3.6.1.4.1.12356.101.6.0.703": {
+        "name": "Admin Logout",
+        "category": "security",
+        "severity": "info",
+        "description": "Administrator has logged out of the device",
+        "mib": "FORTINET-FORTIGATE-MIB",
+        "variables": ["fnSysSerial", "fgAdminLogoutUser"]
+      }
+    }
+  }
+}
