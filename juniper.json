@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "updated": "2025-01-15T10:00:00Z",
+    "description": "Juniper Networks SNMP trap definitions",
+    "enterprise_oid": "1.3.6.1.4.1.2636"
+  },
+  "traps": {
+    "system": {
+      "1.3.6.1.4.1.2636.4.5.0.1": {
+        "name": "Alarm Set",
+        "category": "system",
+        "severity": "warning",
+        "description": "A system alarm condition has been detected and set",
+        "mib": "JUNIPER-ALARM-MIB",
+        "variables": ["jnxYellowAlarmState", "jnxRedAlarmState"]
+      },
+      "1.3.6.1.4.1.2636.4.5.0.2": {
+        "name": "Alarm Cleared",
+        "category": "system",
+        "severity": "info",
+        "description": "A previously set system alarm condition has been cleared",
+        "mib": "JUNIPER-ALARM-MIB",
+        "variables": ["jnxYellowAlarmState", "jnxRedAlarmState"]
+      },
+      "1.3.6.1.4.1.2636.4.1.0.1": {
+        "name": "Power Supply Failure",
+        "category": "environmental",
+        "severity": "critical",
+        "description": "A power supply unit has failed",
+        "mib": "JUNIPER-CHASSIS-MIB",
+        "variables": ["jnxContentsContainerIndex", "jnxContentsL1Index", "jnxContentsL2Index"]
+      },
+      "1.3.6.1.4.1.2636.4.1.0.2": {
+        "name": "Power Supply OK",
+        "category": "environmental",
+        "severity": "info",
+        "description": "A power supply unit has returned to normal operation",
+        "mib": "JUNIPER-CHASSIS-MIB",
+        "variables": ["jnxContentsContainerIndex", "jnxContentsL1Index", "jnxContentsL2Index"]
+      },
+      "1.3.6.1.4.1.2636.4.1.0.3": {
+        "name": "Fan Failure",
+        "category": "environmental",
+        "severity": "critical",
+        "description": "A cooling fan has failed",
+        "mib": "JUNIPER-CHASSIS-MIB",
+        "variables": ["jnxContentsContainerIndex", "jnxContentsL1Index", "jnxContentsL2Index"]
+      },
+      "1.3.6.1.4.1.2636.4.1.0.4": {
+        "name": "Fan OK",
+        "category": "environmental",
+        "severity": "info",
+        "description": "A cooling fan has returned to normal operation",
+        "mib": "JUNIPER-CHASSIS-MIB",
+        "variables": ["jnxContentsContainerIndex", "jnxContentsL1Index", "jnxContentsL2Index"]
+      }
+    },
+    "environmental": {
+      "1.3.6.1.4.1.2636.4.1.0.5": {
+        "name": "Over Temperature",
+        "category": "environmental",
+        "severity": "critical",
+        "description": "Device temperature has exceeded critical threshold",
+        "mib": "JUNIPER-CHASSIS-MIB",
+        "variables": ["jnxContentsContainerIndex", "jnxContentsL1Index", "jnxContentsDescr"]
+      },
+      "1.3.6.1.4.1.2636.4.1.0.6": {
+        "name": "Temperature OK",
+        "category": "environmental",
+        "severity": "info",
+        "description": "Device temperature has returned to normal range",
+        "mib": "JUNIPER-CHASSIS-MIB",
+        "variables": ["jnxContentsContainerIndex", "jnxContentsL1Index", "jnxContentsDescr"]
+      }
+    },
+    "interface": {
+      "1.3.6.1.4.1.2636.4.3.0.1": {
+        "name": "Interface Down",
+        "category": "interface",
+        "severity": "warning",
+        "description": "A network interface has gone down",
+        "mib": "JUNIPER-IF-MIB",
+        "variables": ["ifIndex", "ifName", "ifType"]
+      },
+      "1.3.6.1.4.1.2636.4.3.0.2": {
+        "name": "Interface Up",
+        "category": "interface",
+        "severity": "info",
+        "description": "A network interface has come up",
+        "mib": "JUNIPER-IF-MIB",
+        "variables": ["ifIndex", "ifName", "ifType"]
+      }
+    },
+    "routing": {
+      "1.3.6.1.4.1.2636.4.2.0.1": {
+        "name": "BGP Peer Down",
+        "category": "routing",
+        "severity": "error",
+        "description": "A BGP peering session has gone down",
+        "mib": "JUNIPER-BGP4-V2-MIB",
+        "variables": ["jnxBgpM2PeerRemoteAddr", "jnxBgpM2PeerState", "jnxBgpM2PeerLastErrorReceived"]
+      },
+      "1.3.6.1.4.1.2636.4.2.0.2": {
+        "name": "BGP Peer Up",
+        "category": "routing",
+        "severity": "info",
+        "description": "A BGP peering session has been established",
+        "mib": "JUNIPER-BGP4-V2-MIB",
+        "variables": ["jnxBgpM2PeerRemoteAddr", "jnxBgpM2PeerState"]
+      },
+      "1.3.6.1.4.1.2636.4.2.0.3": {
+        "name": "OSPF Neighbor Down",
+        "category": "routing",
+        "severity": "warning",
+        "description": "An OSPF neighbor relationship has been lost",
+        "mib": "JUNIPER-OSPF-MIB",
+        "variables": ["jnxOspfNbrRtrId", "jnxOspfNbrIpAddr", "jnxOspfNbrState"]
+      }
+    },
+    "configuration": {
+      "1.3.6.1.4.1.2636.4.6.0.1": {
+        "name": "Config Change",
+        "category": "configuration",
+        "severity": "warning",
+        "description": "Device configuration has been modified",
+        "mib": "JUNIPER-CFGMGMT-MIB",
+        "variables": ["jnxCmCfgChgEventSource", "jnxCmCfgChgEventUser", "jnxCmCfgChgEventLog"]
+      },
+      "1.3.6.1.4.1.2636.4.6.0.2": {
+        "name": "Config Commit",
+        "category": "configuration",
+        "severity": "info",
+        "description": "Device configuration changes have been committed",
+        "mib": "JUNIPER-CFGMGMT-MIB",
+        "variables": ["jnxCmCfgChgEventSource", "jnxCmCfgChgEventUser"]
+      }
+    }
+  }
+}
