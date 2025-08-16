@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "updated": "2025-01-15T10:00:00Z",
+    "description": "Cisco Systems SNMP trap definitions",
+    "enterprise_oid": "1.3.6.1.4.1.9"
+  },
+  "traps": {
+    "configuration": {
+      "1.3.6.1.4.1.9.9.43.2.0.1": {
+        "name": "Config Change",
+        "category": "configuration",
+        "severity": "warning",
+        "description": "Configuration has been changed on the device through CLI, SNMP, or other management interface",
+        "mib": "CISCO-CONFIG-MAN-MIB",
+        "variables": ["ccmHistoryEventCommandSource", "ccmHistoryEventConfigSource"]
+      },
+      "1.3.6.1.4.1.9.9.43.2.0.2": {
+        "name": "Config Save",
+        "category": "configuration",
+        "severity": "info",
+        "description": "Device configuration has been saved to startup-config or another destination",
+        "mib": "CISCO-CONFIG-MAN-MIB",
+        "variables": ["ccmHistoryEventConfigDestination"]
+      }
+    },
+    "performance": {
+      "1.3.6.1.4.1.9.9.109.2.0.1": {
+        "name": "CPU Threshold Exceeded",
+        "category": "performance",
+        "severity": "error",
+        "description": "CPU utilization has exceeded the configured rising threshold",
+        "mib": "CISCO-PROCESS-MIB",
+        "variables": ["cpmCPUTotalPhysicalIndex", "cpmCPUTotal5secRev", "cpmCPUTotalMonIntervalValue"]
+      },
+      "1.3.6.1.4.1.9.9.48.2.0.1": {
+        "name": "Memory Threshold Exceeded",
+        "category": "performance",
+        "severity": "error",
+        "description": "Memory utilization has exceeded the configured threshold",
+        "mib": "CISCO-MEMORY-POOL-MIB",
+        "variables": ["ciscoMemoryPoolName", "ciscoMemoryPoolUsed", "ciscoMemoryPoolFree"]
+      }
+    },
+    "environmental": {
+      "1.3.6.1.4.1.9.9.13.3.0.1": {
+        "name": "Temperature Warning",
+        "category": "environmental",
+        "severity": "warning",
+        "description": "Device temperature sensor has exceeded the warning threshold",
+        "mib": "CISCO-ENVMON-MIB",
+        "variables": ["ciscoEnvMonTemperatureStatusDescr", "ciscoEnvMonTemperatureStatusValue"]
+      },
+      "1.3.6.1.4.1.9.9.13.3.0.2": {
+        "name": "Temperature Critical",
+        "category": "environmental",
+        "severity": "critical",
+        "description": "Device temperature sensor has exceeded the critical threshold",
+        "mib": "CISCO-ENVMON-MIB",
+        "variables": ["ciscoEnvMonTemperatureStatusDescr", "ciscoEnvMonTemperatureStatusValue"]
+      },
+      "1.3.6.1.4.1.9.9.13.3.0.3": {
+        "name": "Fan Failure",
+        "category": "environmental",
+        "severity": "critical",
+        "description": "A cooling fan has failed or is not operating within normal parameters",
+        "mib": "CISCO-ENVMON-MIB",
+        "variables": ["ciscoEnvMonFanStatusDescr", "ciscoEnvMonFanState"]
+      },
+      "1.3.6.1.4.1.9.9.13.3.0.4": {
+        "name": "Power Supply Failure",
+        "category": "environmental",
+        "severity": "critical",
+        "description": "A power supply unit has failed or is not operating within normal parameters",
+        "mib": "CISCO-ENVMON-MIB",
+        "variables": ["ciscoEnvMonSupplyStatusDescr", "ciscoEnvMonSupplyState"]
+      }
+    },
+    "interface": {
+      "1.3.6.1.4.1.9.2.2.1.1.20": {
+        "name": "Interface Reset",
+        "category": "interface",
+        "severity": "warning",
+        "description": "A network interface has been reset",
+        "mib": "OLD-CISCO-INTERFACES-MIB",
+        "variables": ["ifIndex"]
+      }
+    },
+    "system": {
+      "1.3.6.1.4.1.9.9.41.2.0.1": {
+        "name": "Card Down",
+        "category": "system",
+        "severity": "error",
+        "description": "A card or module in the chassis has gone down",
+        "mib": "CISCO-STACK-MIB",
+        "variables": ["portName", "portType"]
+      },
+      "1.3.6.1.4.1.9.9.41.2.0.2": {
+        "name": "Card Up",
+        "category": "system",
+        "severity": "info",
+        "description": "A card or module in the chassis has come up",
+        "mib": "CISCO-STACK-MIB",
+        "variables": ["portName", "portType"]
+      }
+    },
+    "security": {
+      "1.3.6.1.4.1.9.9.315.2.0.1": {
+        "name": "AAA Server Unreachable",
+        "category": "security",
+        "severity": "error",
+        "description": "AAA server is unreachable for authentication requests",
+        "mib": "CISCO-AAA-SERVER-MIB",
+        "variables": ["casServerAddr", "casServerProtocol"]
+      }
+    }
+  }
+}
