@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "updated": "2025-01-15T10:00:00Z",
+    "description": "Vendor enterprise OID mappings and metadata"
+  },
+  "vendors": {
+    "standard": {
+      "name": "Standard SNMP",
+      "enterprise_oid": "1.3.6.1.6.3.1.1.5",
+      "description": "RFC standard SNMP traps defined in SNMPv2-MIB and IF-MIB",
+      "common_mibs": [
+        "SNMPv2-MIB",
+        "IF-MIB",
+        "RFC1213-MIB"
+      ],
+      "website": "https://www.ietf.org"
+    },
+    "cisco": {
+      "name": "Cisco Systems",
+      "enterprise_oid": "1.3.6.1.4.1.9",
+      "description": "Cisco networking equipment including routers, switches, firewalls, and wireless devices",
+      "common_mibs": [
+        "CISCO-CONFIG-MAN-MIB",
+        "CISCO-PROCESS-MIB",
+        "CISCO-MEMORY-POOL-MIB",
+        "CISCO-ENVMON-MIB",
+        "CISCO-STACK-MIB",
+        "CISCO-AAA-SERVER-MIB",
+        "OLD-CISCO-INTERFACES-MIB"
+      ],
+      "website": "https://www.cisco.com"
+    },
+    "juniper": {
+      "name": "Juniper Networks",
+      "enterprise_oid": "1.3.6.1.4.1.2636",
+      "description": "Juniper routers, switches, and security appliances including EX, MX, SRX, and QFX series",
+      "common_mibs": [
+        "JUNIPER-ALARM-MIB",
+        "JUNIPER-CHASSIS-MIB",
+        "JUNIPER-IF-MIB",
+        "JUNIPER-BGP4-V2-MIB",
+        "JUNIPER-OSPF-MIB",
+        "JUNIPER-CFGMGMT-MIB"
+      ],
+      "website": "https://www.juniper.net"
+    },
+    "fortinet": {
+      "name": "Fortinet",
+      "enterprise_oid": "1.3.6.1.4.1.12356",
+      "description": "Fortinet security appliances including FortiGate firewalls, FortiAnalyzer, and FortiManager",
+      "common_mibs": [
+        "FORTINET-FORTIGATE-MIB",
+        "FORTINET-CORE-MIB"
+      ],
+      "website": "https://www.fortinet.com"
+    },
+    "hpe": {
+      "name": "Hewlett Packard Enterprise",
+      "enterprise_oid": "1.3.6.1.4.1.11",
+      "description": "HPE networking equipment including ProCurve and Aruba switches",
+      "common_mibs": [
+        "HP-ICF-CHASSIS",
+        "STATISTICS-MIB"
+      ],
+      "website": "https://www.hpe.com"
+    },
+    "aruba": {
+      "name": "Aruba Networks",
+      "enterprise_oid": "1.3.6.1.4.1.47196",
+      "description": "Aruba wireless controllers, access points, and switching equipment
